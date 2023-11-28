@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.regex.Pattern;
+
 public class Calculator {
     private static final String DEFAULT_DELIMITER ="[,\\n]";
     public int add(String numbers){
@@ -13,11 +15,24 @@ public class Calculator {
                 return Integer.parseInt(numbers);
             }
         }
-        String[] number=numbers.split(DEFAULT_DELIMITER);
-
-        return sum(number);
+        // Check for custom delimiter
+        if (numbers.startsWith("//")) {
+            String customDelimiter = Character.toString(numbers.charAt(2));
+            String numbersPart = numbers.substring(4);
+            return sum(splitNumbers(numbersPart, Pattern.quote(customDelimiter)));
+        } else {
+            // Use the default delimiter
+            return sum(splitNumbers(numbers, DEFAULT_DELIMITER));
+        }
     }
-
+    private String[] splitNumbers(String numbers, String delimiter) {
+        // Trim each number to handle spaces
+        String[] numList = numbers.split(delimiter);
+        for (int i = 0; i < numList.length; i++) {
+            numList[i] = numList[i].trim();
+        }
+        return numList;
+    }
     private int sum(String[] numbers) {
         int result=0;
         for(String number:numbers){

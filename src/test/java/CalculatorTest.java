@@ -56,4 +56,14 @@ public class CalculatorTest {
         int actual = calculator.add("1\n2,3");
         assertEquals(expected, actual);
     }
+
+    @Test
+    @DisplayName("Test on Adding Numbers with Custom Delimiter")
+    public void testAddWithCustomDelimiter() {
+        Calculator calculator = new Calculator();
+        int expected = 3;
+        int actual = calculator.add("//;\n1;2");
+        assertEquals(expected, actual);
+    }
+
 }
