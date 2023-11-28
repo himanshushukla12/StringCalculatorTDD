@@ -21,4 +21,13 @@ public class CalculatorTest {
         Calculator calculator = new Calculator();
         assertThrows(IllegalArgumentException.class, () -> calculator.add("-"));
     }
+
+    @Test
+    @DisplayName("Test on Adding Single Number")
+    public void testAddSingleNumber(){
+        Calculator calculator=new Calculator();
+        int expected=1;
+        int actual=calculator.add("1");
+        assertEquals(expected,actual);
+    }
 }
