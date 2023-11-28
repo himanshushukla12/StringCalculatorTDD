@@ -1,7 +1,7 @@
 package org.example;
 
 public class Calculator {
-    private static final String DEFAULT_DELIMITER = ",";
+    private static final String DEFAULT_DELIMITER ="[,\\n]";
     public int add(String numbers){
         if(numbers.isEmpty()){
             return 0;
