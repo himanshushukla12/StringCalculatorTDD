@@ -47,4 +47,13 @@ public class CalculatorTest {
         int actual = calculator.add("1,2,3,4,5");
         assertEquals(expected, actual);
     }
+
+    @Test
+    @DisplayName("Test on Adding Numbers with New Lines")
+    public void testAddWithNewLines() {
+        Calculator calculator = new Calculator();
+        int expected = 6;
+        int actual = calculator.add("1\n2,3");
+        assertEquals(expected, actual);
+    }
 }
