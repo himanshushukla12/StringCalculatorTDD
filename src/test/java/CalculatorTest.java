@@ -16,7 +16,7 @@ public class CalculatorTest {
     }
 
     @Test
-    @DisplayName("Test with Invalid Input: Single Hyphen")
+    @DisplayName("Test with Invalid Input: Spacial Characters")
     public void testAddWithInvalidInput() {
         Calculator calculator = new Calculator();
         assertThrows(IllegalArgumentException.class, () -> calculator.add("-"));
