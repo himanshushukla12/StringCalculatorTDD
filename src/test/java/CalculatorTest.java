@@ -73,4 +73,12 @@ public class CalculatorTest {
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> calculator.add("1,-2,3"));
         assertEquals("Negatives not allowed: -2", exception.getMessage());
     }
+
+    @Test
+    @DisplayName("Test on Adding Numbers with Multiple Negative Numbers")
+    public void testAddWithMultipleNegativeNumbers() {
+        Calculator calculator = new Calculator();
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> calculator.add("1,-2,3,-4"));
+        assertEquals("Negatives not allowed: -2, -4", exception.getMessage());
+    }
 }
