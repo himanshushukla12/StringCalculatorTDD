@@ -38,4 +38,13 @@ public class CalculatorTest {
         int actual = calculator.add("1,2");
         assertEquals(expected, actual);
     }
+
+    @Test
+    @DisplayName("Test on Adding Unknown Amount of Numbers")
+    public void testAddUnknownAmountOfNumbers() {
+        Calculator calculator = new Calculator();
+        int expected = 15;
+        int actual = calculator.add("1,2,3,4,5");
+        assertEquals(expected, actual);
+    }
 }
