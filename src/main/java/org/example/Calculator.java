@@ -35,11 +35,22 @@ public class Calculator {
     }
     private int sum(String[] numbers) {
         int result=0;
-        for(String number:numbers){
-            result+=Integer.parseInt(number);
+        StringBuilder negatives = new StringBuilder();
+
+        for (String num : numbers) {
+            int n = Integer.parseInt(num);
+            if (n < 0) {
+                negatives.append(n);
+            } else if (n <= 1000) {
+                // Ignore numbers greater than 1000
+                result += n;
+            }
+        }
+
+        // If negative numbers found, throw an exception
+        if (negatives.length() > 0) {
+            throw new IllegalArgumentException("Negatives not allowed: " + negatives);
         }
         return result;
     }
-
-
 }
