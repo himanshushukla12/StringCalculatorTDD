@@ -40,6 +40,9 @@ public class Calculator {
         for (String num : numbers) {
             int n = Integer.parseInt(num);
             if (n < 0) {
+                if (negatives.length() > 0) {
+                    negatives.append(", ");
+                }
                 negatives.append(n);
             } else if (n <= 1000) {
                 // Ignore numbers greater than 1000
@@ -47,7 +50,10 @@ public class Calculator {
             }
         }
 
-
+        // If negative numbers found, throw an exception
+        if (negatives.length() > 0) {
+            throw new IllegalArgumentException("Negatives not allowed: " + negatives);
+        }
         return result;
     }
 }
