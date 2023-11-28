@@ -47,10 +47,7 @@ public class Calculator {
             }
         }
 
-        // If negative numbers found, throw an exception
-        if (negatives.length() > 0) {
-            throw new IllegalArgumentException("Negatives not allowed: " + negatives);
-        }
+
         return result;
     }
 }
