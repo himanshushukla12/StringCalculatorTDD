@@ -13,4 +13,5 @@ public class CalculatorTest {
         int actual=calculator.add("");
         assertEquals(expected,actual);
     }
+
 }
