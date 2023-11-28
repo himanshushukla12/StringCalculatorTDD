@@ -1,6 +1,7 @@
 package org.example;
 
 public class Calculator {
+    private static final String DEFAULT_DELIMITER = ",";
     public int add(String numbers){
         if(numbers.isEmpty()){
             return 0;
@@ -12,6 +13,16 @@ public class Calculator {
                 return Integer.parseInt(numbers);
             }
         }
-        return 0;
+        String[] number=numbers.split(DEFAULT_DELIMITER);
+
+        return sum(number);
+    }
+
+    private int sum(String[] numbers) {
+        int result=0;
+        for(String number:numbers){
+            result+=Integer.parseInt(number);
+        }
+        return result;
     }
 }
