@@ -9,6 +9,9 @@ public class Calculator {
             if(numbers.matches(".*[^a-zA-Z0-9].*")){
                 throw new IllegalArgumentException("Invalid input: Single hyphen is not allowed");
             }
+            else if(numbers.matches(".*\\d.*")){
+                return Integer.parseInt(numbers);
+            }
         }
         return 0;
     }
