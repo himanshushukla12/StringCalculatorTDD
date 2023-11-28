@@ -30,4 +30,12 @@ public class CalculatorTest {
         int actual=calculator.add("1");
         assertEquals(expected,actual);
     }
+    @Test
+    @DisplayName("Test on Adding Two Numbers")
+    public void testAddTwoNumbers() {
+        Calculator calculator = new Calculator();
+        int expected = 3;
+        int actual = calculator.add("1,2");
+        assertEquals(expected, actual);
+    }
 }
