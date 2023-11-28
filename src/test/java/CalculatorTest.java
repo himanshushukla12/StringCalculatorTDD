@@ -67,7 +67,7 @@ public class CalculatorTest {
     }
 
     @Test
-    @DisplayName("Test on Adding Numbers with Negative Number")
+    @DisplayName("Test on Adding Numbers with Negative Number ")
     public void testAddWithNegativeNumber() {
         Calculator calculator = new Calculator();
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> calculator.add("1,-2,3"));
